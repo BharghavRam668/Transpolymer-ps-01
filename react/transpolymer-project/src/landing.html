@@ -1,0 +1,1624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transploymer - Revolutionary Polymer Engineering with Transformer AI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a5f7a;
+            --primary-light: #2e7d9b;
+            --secondary: #57c4e5;
+            --accent: #ff7a59;
+            --text-dark: #2c3e50;
+            --text-light: #ecf0f1;
+            --gray-light: #f8f9fa;
+            --gray: #e9ecef;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+        
+        body {
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+            background-color: rgb(51, 49, 49);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        
+        .nav-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color:whitesmoke;
+            text-decoration: none;
+            
+        }
+        .logo:hover {
+        transform: scale(1.05);  
+        color: #ffffff; 
+        }
+        .logo-icon {
+            margin-right: 0.5rem;
+            color: var(--accent);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color:whitesmoke;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .nav-cta {
+            background-color: var(--accent);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        
+        .nav-cta:hover {
+            background-color: #ee6c4d;
+            color: white;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            cursor: pointer;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            padding: 10rem 0 6rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 4rem;
+        }
+        
+        .hero-text {
+            flex: 1;
+            z-index: 2;
+        }
+        
+        .hero-image {
+            flex: 1;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-blob {
+            position: absolute;
+            top: -20%;
+            right: -10%;
+            width: 60%;
+            height: 120%;
+            background: linear-gradient(45deg, rgba(87, 196, 229, 0.1) 0%, rgba(26, 95, 122, 0.05) 100%);
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            z-index: 1;
+            animation: blobFloat 15s ease-in-out infinite alternate;
+        }
+        
+        @keyframes blobFloat {
+            0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; transform: translate(0, 0); }
+            50% { border-radius: 40% 60% 60% 40% / 60% 40% 60% 40%; transform: translate(-5%, 5%) scale(1.05); }
+            100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; transform: translate(0, 0); }
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+            font-weight: 800;
+        }
+        
+        .highlight {
+            color: var(--primary);
+            position: relative;
+        }
+        
+        .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background-color: rgba(87, 196, 229, 0.2);
+            z-index: -1;
+            transform: skewX(-15deg);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #4a5568;
+            font-weight: 400;
+            line-height: 1.7;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.9rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary {
+            background-color: var(--accent);
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 122, 89, 0.3);
+        }
+        
+        .btn-primary:hover {
+            background-color: #ee6c4d;
+            transform: translateY(-2px);
+            box-shadow: 0 7px 20px rgba(255, 122, 89, 0.4);
+        }
+        
+        .btn-secondary {
+            background-color: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-secondary:hover {
+            background-color: #f8f9fa;
+            transform: translateY(-2px);
+        }
+        
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 5px;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.5);
+            opacity: 0;
+            border-radius: 100%;
+            transform: scale(1, 1) translate(-50%);
+            transform-origin: 50% 50%;
+        }
+        
+        @keyframes ripple {
+            0% { transform: scale(0, 0); opacity: 0.5; }
+            100% { transform: scale(20, 20); opacity: 0; }
+        }
+        
+        .btn:focus:not(:active)::after {
+            animation: ripple 1s ease-out;
+        }
+        
+        .trusted-by {
+            margin-top: 4rem;
+        }
+        
+        .trusted-text {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #718096;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        
+        .trusted-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .trusted-logo {
+            height: 30px;
+            opacity: 0.7;
+            filter: grayscale(100%);
+            transition: all 0.3s;
+        }
+        
+        .trusted-logo:hover {
+            opacity: 1;
+            filter: grayscale(0);
+        }
+        
+        .features {
+            padding: 8rem 0;
+            background-color: rgb(247, 244, 244);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+        
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #4a5568;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .feature-card.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(87, 196, 229, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            font-size: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-icon::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+            top: 0;
+            left: -100%;
+            transform: skewX(-25deg);
+            transition: 0.5s;
+        }
+        
+        .feature-card:hover .feature-icon::before {
+            left: 100%;
+        }
+        
+        .feature-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+        
+        .molecule {
+            position: absolute;
+            opacity: 0.5;
+            z-index: 1;
+        }
+        
+        .molecule1 { top: 15%; left: 10%; animation: float 10s ease-in-out infinite alternate; }
+        .molecule2 { top: 60%; right: 5%; animation: float 15s ease-in-out infinite alternate-reverse; }
+        .molecule3 { bottom: 10%; left: 15%; animation: float 12s ease-in-out infinite alternate; }
+        
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+            100% { transform: translateY(20px) rotate(-5deg); }
+        }
+        
+        .particles-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.3;
+        }
+        
+        .how-it-works {
+            padding: 8rem 0;
+            background-color: var(--gray-light);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .process-flow {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-top: 4rem;
+        }
+        
+        .process-step {
+            flex: 1;
+            text-align: center;
+            padding: 0 1.5rem;
+            position: relative;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .process-step.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin: 0 auto 1.5rem;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 5px 15px rgba(26, 95, 122, 0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .process-step:hover .step-number {
+            transform: scale(1.1) translateY(-5px);
+        }
+        
+        .step-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+        
+        .step-description {
+            color: #4a5568;
+            font-size: 1rem;
+        }
+        
+        .process-line {
+            position: absolute;
+            top: 30px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-light);
+            z-index: 1;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 1.2s ease;
+        }
+        
+        .process-line.animated {
+            transform: scaleX(1);
+        }
+        
+        .use-cases {
+            padding: 8rem 0;
+            background-color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .case-container {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+            margin-top: 4rem;
+            opacity: 0;
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        
+        .case-container.from-left { transform: translateX(-100px); }
+        .case-container.from-right { transform: translateX(100px); }
+        
+        .case-container.animated {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .case-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+        
+        .case-image svg {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .case-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(26, 95, 122, 0.1), rgba(87, 196, 229, 0.2));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .case-image:hover::before {
+            opacity: 1;
+        }
+        
+        .case-content {
+            flex: 1;
+        }
+        
+        .case-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .case-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+        
+        .case-list {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+        
+        .case-list li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .case-list-icon {
+            color: var(--accent);
+            margin-right: 1rem;
+            margin-top: 0.3rem;
+        }
+        
+        .falling-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .falling-element {
+            position: absolute;
+            opacity: 0;
+            z-index: 1;
+        }
+        
+        .falling-element.hexagon {
+            opacity: 0.15;
+            width: 40px;
+            height: 35px;
+            animation: fall 15s linear infinite;
+        }
+        
+        .falling-element.circle {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: var(--primary-light);
+            opacity: 0.1;
+            animation: fall 10s linear infinite;
+        }
+        
+        .falling-element.square {
+            width: 25px;
+            height: 25px;
+            background-color: var(--accent);
+            opacity: 0.1;
+            animation: fall 12s linear infinite;
+        }
+        
+        @keyframes fall {
+            0% { transform: translateY(-100px) translateX(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.2; }
+            90% { opacity: 0.2; }
+            100% { transform: translateY(800px) translateX(100px) rotate(360deg); opacity: 0; }
+        }
+        
+        .testimonials {
+            padding: 8rem 0;
+            background-color: var(--gray-light);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonial-container {
+            display: flex;
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+        
+        .testimonial-card {
+            flex: 1;
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .testimonial-card.animated {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 5rem;
+            color: rgba(87, 196, 229, 0.1);
+            font-family: Georgia, serif;
+            line-height: 1;
+            z-index: -1;
+        }
+        
+        .testimonial-text {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            flex-grow: 1;
+            color: #4a5568;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 1rem;
+            background-color: var(--gray);
+            overflow: hidden;
+            border: 3px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .author-info h4 {
+            font-weight: 700;
+            margin-bottom: 0.2rem;
+            color: var(--text-dark);
+        }
+        
+        .author-company {
+            font-size: 0.9rem;
+            color: #718096;
+        }
+        
+        .cta-section {
+            padding: 8rem 0;
+            background:rgb(51, 49, 49); ;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .cta-title.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .cta-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
+        }
+        
+        .cta-subtitle.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .cta-btn {
+            background-color: white;
+            color: var(--primary);
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.3s, opacity 0.8s ease 0.4s, transform 0.8s ease 0.4s;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cta-btn.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .cta-btn:hover {
+            background-color: var(--accent);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .cta-floating-circle {
+            position: absolute;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.05);
+            z-index: 1;
+        }
+        
+        .cta-circle-1 { width: 300px; height: 300px; top: -150px; left: -100px; animation: float-slow 25s linear infinite alternate; }
+        .cta-circle-2 { width: 200px; height: 200px; bottom: -100px; right: 10%; animation: float-slow 20s linear infinite alternate-reverse; }
+        
+        @keyframes float-slow {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+        
+        footer {
+            background-color: #12121a;
+            color: white;
+            padding: 5rem 0 2rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+        .footer-logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        align-items: center;
+        color: var(--text-light);
+        text-decoration: none;
+        position: relative; 
+        display: inline-block;
+        }
+
+        .footer-logo::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 1px;
+        bottom: 0;
+        left: 0;
+        background-color: white;
+        transition: width 0.3s;
+        }
+
+        .footer-logo:hover::after {
+        width: 100%; 
+        }
+
+        .footer-logo:hover {
+        color: var(--text-light);
+        }
+        .footer-logo-icon {
+            margin-right: 0.5rem;
+            color: var(--accent);
+        }
+        
+        .footer-description {
+            color: #a0aec0;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        .footer-links h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: #a0aec0;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: inline-block;
+            position: relative;
+        }
+        
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: 0;
+            left: 0;
+            background-color: white;
+            transition: width 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: #a0aec0;
+            font-size: 0.9rem;
+        }
+
+        .cursor-follower {
+            position: fixed;
+            width: 40px;
+            height: 40px;
+            border: 2px solid var(--accent);
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0;
+            z-index: 9999;
+            transition: transform 0.1s, opacity 0.3s;
+            mix-blend-mode: difference;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(45deg, var(--primary) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline;
+        }
+        
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 300px;
+            height: 100vh;
+            background-color: white;
+            z-index: 1001;
+            transition: right 0.3s ease;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+        }
+        
+        .mobile-menu.open {
+            right: 0;
+        }
+        
+        .mobile-menu-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            cursor: pointer;
+        }
+        
+        .mobile-links {
+            list-style: none;
+            margin-top: 3rem;
+        }
+        
+        .mobile-links li {
+            margin-bottom: 1.5rem;
+        }
+        
+        .mobile-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+            display: block;
+            padding: 0.5rem 0;
+        }
+        
+        .mobile-links a:hover {
+            color: var(--accent);
+        }
+        
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        
+        .loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .loader-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .loader-icon {
+            width: 60px;
+            height: 60px;
+            position: relative;
+        }
+        
+        .loader-circle {
+            width: 100%;
+            height: 100%;
+            border: 4px solid rgba(26, 95, 122, 0.1);
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .loader-text {
+            margin-top: 1rem;
+            font-weight: 600;
+            color: var(--primary);
+            letter-spacing: 2px;
+        }
+        
+        .molecule-3d {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            animation: rotate3d 20s linear infinite;
+        }
+        
+        @keyframes rotate3d {
+            from { transform: rotateY(0deg) rotateX(0deg); }
+            to { transform: rotateY(360deg) rotateX(360deg); }
+        }
+
+        @media (max-width: 992px) {
+            .feature-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-content { grid-template-columns: 1fr 1fr; }
+            .process-flow { flex-direction: column; gap: 3rem; }
+            .process-line { display: none; }
+            .case-container, .testimonial-container { flex-direction: column; }
+            .hero-content { flex-direction: column-reverse; text-align: center; }
+            h1 { font-size: 2.8rem; }
+            .cta-buttons { justify-content: center; }
+            .cursor-follower { display: none; }
+        }
+        
+        @media (max-width: 768px) {
+            .feature-grid { grid-template-columns: 1fr; }
+            .footer-content { grid-template-columns: 1fr; gap: 3rem; }
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+            .section-title { font-size: 2rem; }
+            h1 { font-size: 2.3rem; }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loader">
+        <div class="loader-content">
+            <div class="loader-icon">
+                <div class="loader-circle"></div>
+            </div>
+            <div class="loader-text">TRANSPLOYMER</div>
+        </div>
+    </div>
+    
+    <div class="cursor-follower"></div>
+    
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon"><i class="fas fa-atom"></i></span>
+                TRANSPOLYMER
+            </a>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#use-cases">Use Cases</a></li>
+                <li><a href="#testimonals">Testimonials</a></li>
+                <li><a href="login.html" class="nav-cta">Get Started</a></li>
+            </ul>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+    
+    <div class="mobile-menu">
+        <button class="mobile-menu-close">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul class="mobile-links">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#use-cases">Use Cases</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#" class="nav-cta">Get Started</a></li>
+        </ul>
+    </div>
+    
+    <div class="overlay"></div>
+
+    <section class="hero">
+        <div class="hero-blob"></div>
+        <div class="particles-container" id="particles-hero"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Revolutionizing <span class="highlight">Polymer Engineering</span> with Transformer AI</h1>
+                    <p class="subtitle">Discover how our advanced transformer neural networks are redefining polymer design, simulation, and optimization for <span class="gradient-text">next-generation materials</span>.</p>
+                    <div class="cta-buttons">
+                        <a href="demo.html" class="btn btn-primary">Request Demo</a>
+                        <a href="#" class="btn btn-secondary">Learn More</a>
+                    </div>
+                    <div class="trusted-by">
+                        <p class="trusted-text">Trusted by industry leaders</p>
+                        <div class="trusted-logos">
+                            <svg width="100" height="30" viewBox="0 0 100 30" class="trusted-logo">
+                                <rect x="5" y="10" width="90" height="10" rx="2" fill="#718096" />
+                            </svg>
+                            <svg width="100" height="30" viewBox="0 0 100 30" class="trusted-logo">
+                                <circle cx="15" cy="15" r="10" fill="#718096" />
+                                <rect x="30" y="10" width="60" height="10" rx="2" fill="#718096" />
+                            </svg>
+                            <svg width="100" height="30" viewBox="0 0 100 30" class="trusted-logo">
+                                <polygon points="15,5 25,25 5,25" fill="#718096" />
+                                <rect x="30" y="10" width="60" height="10" rx="2" fill="#718096" />
+                            </svg>
+                            <svg width="100" height="30" viewBox="0 0 100 30" class="trusted-logo">
+                                <rect x="5" y="5" width="20" height="20" fill="#718096" />
+                                <rect x="30" y="10" width="60" height="10" rx="2" fill="#718096" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="molecule-3d">
+                        <svg width="500" height="400" viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="gradientBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#1a5f7a" stop-opacity="0.1" />
+                                    <stop offset="100%" stop-color="#57c4e5" stop-opacity="0.2" />
+                                </linearGradient>
+                                <linearGradient id="gradientAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#ff7a59" />
+                                    <stop offset="100%" stop-color="#ff957f" />
+                                </linearGradient>
+                                <linearGradient id="gradientPrimary" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#1a5f7a" />
+                                    <stop offset="100%" stop-color="#2e7d9b" />
+                                </linearGradient>
+                            </defs>
+                            <circle cx="400" cy="100" r="80" fill="url(#gradientBg)" />
+                            <circle cx="100" cy="350" r="60" fill="url(#gradientBg)" />
+                            <g transform="translate(100, 50)">
+                                <g transform="translate(0, 0)" class="molecule-group">
+                                    <circle cx="150" cy="70" r="8" fill="url(#gradientPrimary)" class="atom" />
+                                    <circle cx="190" cy="100" r="8" fill="url(#gradientPrimary)" class="atom" />
+                                    <circle cx="190" cy="140" r="8" fill="url(#gradientPrimary)" class="atom" />
+                                    <circle cx="150" cy="170" r="8" fill="url(#gradientPrimary)" class="atom" />
+                                    <circle cx="110" cy="140" r="8" fill="url(#gradientPrimary)" class="atom" />
+                                    <circle cx="110" cy="100" r="8" fill="url(#gradientPrimary)" class="atom" />
+                                    <line x1="150" y1="70" x2="190" y2="100" stroke="#1a5f7a" stroke-width="3" class="bond" />
+                                    <line x1="190" y1="100" x2="190" y2="140" stroke="#1a5f7a" stroke-width="3" class="bond" />
+                                    <line x1="190" y1="140" x2="150" y2="170" stroke="#1a5f7a" stroke-width="3" class="bond" />
+                                    <line x1="150" y1="170" x2="110" y2="140" stroke="#1a5f7a" stroke-width="3" class="bond" />
+                                    <line x1="110" y1="140" x2="110" y2="100" stroke="#1a5f7a" stroke-width="3" class="bond" />
+                                    <line x1="110" y1="100" x2="150" y2="70" stroke="#1a5f7a" stroke-width="3" class="bond" />
+                                    <circle cx="230" cy="120" r="8" fill="url(#gradientPrimary)" class="atom" />
+                                    <line x1="190" y1="120" x2="230" y2="120" stroke="#1a5f7a" stroke-width="3" class="bond" />
+                                    <circle cx="70" cy="120" r="8" fill="url(#gradientPrimary)" class="atom" />
+                                    <line x1="110" y1="120" x2="70" y2="120" stroke="#1a5f7a" stroke-width="3" class="bond" />
+                                    <circle cx="250" cy="160" r="8" fill="url(#gradientPrimary)" class="atom" />
+                                    <line x1="230" y1="120" x2="250" y2="160" stroke="#1a5f7a" stroke-width="3" class="bond" />
+                                    <circle cx="50" cy="160" r="8" fill="url(#gradientPrimary)" class="atom" />
+                                    <line x1="70" y1="120" x2="50" y2="160" stroke="#1a5f7a" stroke-width="3" class="bond" />
+                                    <circle cx="270" cy="90" r="8" fill="url(#gradientAccent)" class="atom special" />
+                                    <line x1="230" y1="120" x2="270" y2="90" stroke="#1a5f7a" stroke-width="3" class="bond" />
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="falling-elements"></div>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Transformative <span class="gradient-text">Features</span></h2>
+                <p class="section-subtitle">Our platform combines cutting-edge AI with polymer science to deliver unprecedented capabilities in material engineering.</p>
+            </div>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-brain"></i></div>
+                    <h3 class="feature-title">Advanced AI Modeling</h3>
+                    <p>Deploy transformer neural networks specifically trained on polymer structures to predict properties with accuracy exceeding traditional methods.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-flask"></i></div>
+                    <h3 class="feature-title">Rapid Prototyping</h3>
+                    <p>Reduce development cycles by 70% with our AI-powered simulation engine that accurately predicts polymer behavior before physical synthesis.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3 class="feature-title">Property Optimization</h3>
+                    <p>Automatically discover optimal polymer configurations for specific applications with our multi-objective optimization algorithms.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-cloud"></i></div>
+                    <h3 class="feature-title">Cloud Integration</h3>
+                    <p>Access our platform anywhere with seamless cloud integration, enabling collaborative polymer development across global teams.</p>
+                </div>
+                <div class="feature-card">
+                   .directory
+                    <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3 class="feature-title">Data Security</h3>
+                    <p>Rest easy knowing your proprietary polymer research is protected with enterprise-grade encryption and security protocols.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-sync-alt"></i></div>
+                    <h3 class="feature-title">Continuous Learning</h3>
+                    <p>Our AI models continually improve with each polymer simulation, creating an ever-expanding knowledge base for better predictions.</p>
+                </div>
+            </div>
+        </div>
+        <svg class="molecule molecule1" width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="10" fill="#1a5f7a" opacity="0.3" />
+            <circle cx="75" cy="50" r="10" fill="#1a5f7a" opacity="0.3" />
+            <circle cx="25" cy="50" r="10" fill="#1a5f7a" opacity="0.3" />
+            <line x1="50" y1="50" x2="75" y2="50" stroke="#1a5f7a" stroke-width="3" opacity="0.3" />
+            <line x1="50" y1="50" x2="25" y2="50" stroke="#1a5f7a" stroke-width="3" opacity="0.3" />
+        </svg>
+        <svg class="molecule molecule2" width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="40,10 65,30 55,60 25,60 15,30" stroke="#1a5f7a" fill="none" stroke-width="3" opacity="0.3" />
+            <circle cx="40" cy="10" r="5" fill="#ff7a59" opacity="0.3" />
+            <circle cx="65" cy="30" r="5" fill="#1a5f7a" opacity="0.3" />
+            <circle cx="55" cy="60" r="5" fill="#1a5f7a" opacity="0.3" />
+            <circle cx="25" cy="60" r="5" fill="#1a5f7a" opacity="0.3" />
+            <circle cx="15" cy="30" r="5" fill="#1a5f7a" opacity="0.3" />
+        </svg>
+        <svg class="molecule molecule3" width="120" height="60" viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="30" r="8" fill="#1a5f7a" opacity="0.3" />
+            <circle cx="50" cy="30" r="8" fill="#1a5f7a" opacity="0.3" />
+            <circle cx="80" cy="30" r="8" fill="#1a5f7a" opacity="0.3" />
+            <circle cx="110" cy="30" r="8" fill="#ff7a59" opacity="0.3" />
+            <line x1="20" y1="30" x2="50" y2="30" stroke="#1a5f7a" stroke-width="3" opacity="0.3" />
+            <line x1="50" y1="30" x2="80" y2="30" stroke="#1a5f7a" stroke-width="3" opacity="0.3" />
+            <line x1="80" y1="30" x2="110" y2="30" stroke="#1a5f7a" stroke-width="3" opacity="0.3" />
+        </svg>
+    </section>
+
+    <section class="how-it-works" id="how-it-works">
+        <div class="particles-container" id="particles-hiw"></div>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How <span class="gradient-text">Transploymer</span> Works</h2>
+                <p class="section-subtitle">Our streamlined process makes advanced polymer engineering accessible and efficient for R&D teams of all sizes.</p>
+            </div>
+            <div class="process-flow">
+                <div class="process-line"></div>
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Input Requirements</h3>
+                    <p class="step-description">Define your smiles or polymer name and application constraints through our intuitive interface.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">AI Analysis</h3>
+                    <p class="step-description">Our transformer neural networks analyze your requirements against our vast polymer database.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Property Prediction</h3>
+                    <p class="step-description">The system generates potential polymer properties optimized for your specific needs.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3 class="step-title">Simulation & Refinement</h3>
+                    <p class="step-description">The predicted properties are validated through simulations, and properties are refined to meet your application constraints</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h3 class="step-title">Implementation</h3>
+                    <p class="step-description">Receive detailed synthesis parameters and integration guidelines for your optimal polymer.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="use-cases" id="use-cases">
+        <div class="falling-elements"></div>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Transforming <span class="gradient-text">Industries</span></h2>
+                <p class="section-subtitle">See how Transploymer is revolutionizing polymer applications across diverse sectors.</p>
+            </div>
+            <div class="case-container from-left">
+                <div class="case-image">
+                    <svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="caseGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#1a5f7a" stop-opacity="0.1" />
+                                <stop offset="100%" stop-color="#57c4e5" stop-opacity="0.3" />
+                            </linearGradient>
+                        </defs>
+                        <rect width="400" height="300" fill="url(#caseGradient1)" rx="10" />
+                        <circle cx="200" cy="150" r="100" fill="white" stroke="#1a5f7a" stroke-width="2" />
+                        <circle cx="200" cy="150" r="80" fill="white" stroke="#1a5f7a" stroke-width="2" stroke-dasharray="5,5" />
+                        <circle cx="200" cy="150" r="60" fill="#f8f9fa" stroke="#1a5f7a" stroke-width="2" />
+                        <path d="M170,150 Q200,120 230,150 T290,150" stroke="#ff7a59" stroke-width="3" fill="none" />
+                        <path d="M110,150 Q140,180 170,150" stroke="#ff7a59" stroke-width="3" fill="none" />
+                        <circle cx="170" cy="150" r="5" fill="#1a5f7a" />
+                        <circle cx="230" cy="150" r="5" fill="#1a5f7a" />
+                        <circle cx="290" cy="150" r="5" fill="#1a5f7a" />
+                        <circle cx="110" cy="150" r="5" fill="#1a5f7a" />
+                    </svg>
+                </div>
+                <div class="case-content">
+                    <h3 class="case-title">Medical Devices</h3>
+                    <ul class="case-list">
+                        <li><span class="case-list-icon"><i class="fas fa-check-circle"></i></span>Develop biocompatible polymers with precise degradation rates for implantable devices</li>
+                        <li><span class="case-list-icon"><i class="fas fa-check-circle"></i></span>Engineer antimicrobial surfaces that reduce healthcare-associated infections</li>
+                        <li><span class="case-list-icon"><i class="fas fa-check-circle"></i></span>Create flexible, durable materials for next-generation prosthetics</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">Explore Medical Applications</a>
+                </div>
+            </div>
+            <div class="case-container from-right">
+                <div class="case-content">
+                    <h3 class="case-title">Sustainable Packaging</h3>
+                    <ul class="case-list">
+                        <li><span class="case-list-icon"><i class="fas fa-check-circle"></i></span>Design biodegradable polymers that maintain structural integrity during product lifecycle</li>
+                        <li><span class="case-list-icon"><i class="fas fa-check-circle"></i></span>Develop oxygen barrier properties comparable to conventional plastics</li>
+                        <li><span class="case-list-icon"><i class="fas fa-check-circle"></i></span>Reduce environmental impact while maintaining cost effectiveness</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">Discover Packaging Solutions</a>
+                </div>
+                <div class="case-image">
+                    <svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="caseGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#57c4e5" stop-opacity="0.2" />
+                                <stop offset="100%" stop-color="#1a5f7a" stop-opacity="0.1" />
+                            </linearGradient>
+                        </defs>
+                        <rect width="400" height="300" fill="url(#caseGradient2)" rx="10" />
+                        <rect x="100" y="100" width="200" height="150" rx="5" fill="white" stroke="#1a5f7a" stroke-width="2" />
+                        <rect x="120" y="70" width="160" height="30" rx="5" fill="white" stroke="#1a5f7a" stroke-width="2" />
+                        <path d="M120,70 L100,100" stroke="#1a5f7a" stroke-width="2" fill="none" />
+                        <path d="M280,70 L300,100" stroke="#1a5f7a" stroke-width="2" fill="none" />
+                        <circle cx="150" cy="150" r="30" fill="#f8f9fa" stroke="#1a5f7a" stroke-width="2" />
+                        <path d="M140,150 L160,150 M150,140 L150,160" stroke="#1a5f7a" stroke-width="2" />
+                        <circle cx="250" cy="150" r="30" fill="#f8f9fa" stroke="#1a5f7a" stroke-width="2" />
+                        <path d="M250,150 Q260,140 270,150 T290,150" stroke="#ff7a59" stroke-width="2" fill="none" transform="scale(0.6) translate(235, 125)" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <div class="particles-container" id="particles-testimonials"></div>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What Our <span class="gradient-text">Clients Say</span></h2>
+                <p class="section-subtitle">Industry leaders trust Transploymer to solve their most challenging material engineering problems.</p>
+            </div>
+            <div class="testimonial-container">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Transploymer's AI platform reduced our development cycle by 65% and helped us discover a novel biodegradable polymer that outperforms traditional options on every metric."</p>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="30" cy="20" r="15" fill="#a0aec0" />
+                                <path d="M55,60 C55,41.25 43.75,30 25,30 C6.25,30 -5,41.25 -5,60" fill="#a0aec0" />
+                            </svg>
+                        </div>
+                        <div class="author-info">
+                            <h4>Dr. Sarah Chen</h4>
+                            <p class="author-company">Chief Innovation Officer, NexGen Materials</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The transformer models at the core of Transploymer have given us unprecedented insight into polymer behavior at the molecular level. It's like having a crystal ball for materials science."</p>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="30" cy="20" r="15" fill="#a0aec0" />
+                                <path d="M55,60 C55,41.25 43.75,30 25,30 C6.25,30 -5,41.25 -5,60" fill="#a0aec0" />
+                            </svg>
+                        </div>
+                        <div class="author-info">
+                            <h4>James Patel</h4>
+                            <p class="author-company">Head of R&D, PolyTech Solutions</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"With Transploymer, we achieved breakthroughs in sustainable packaging materials that we thought were years away. Their platform is a game-changer for the industry."</p>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="30" cy="20" r="15" fill="#a0aec0" />
+                                <path d="M55,60 C55,41.25 43.75,30 25,30 C6.25,30 -5,41.25 -5,60" fill="#a0aec0" />
+                            </svg>
+                        </div>
+                        <div class="author-info">
+                            <h4>Maria Gonzalez</h4>
+                            <p class="author-company">VP of Sustainability, EcoPack Innovations</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-floating-circle cta-circle-1"></div>
+        <div class="cta-floating-circle cta-circle-2"></div>
+        <div class="container">
+            <h2 class="cta-title">Ready to Transform Your Polymer Engineering?</h2>
+            <p class="cta-subtitle">Join leading innovators who are using Transploymer to create the materials of tomorrow, today.</p>
+            <a href="login.html" class="cta-btn">Get Started Now</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <a href="#" class="footer-logo">
+                        <span class="footer-logo-icon"><i class="fas fa-atom"></i></span>
+                        TRANSPOLYMER
+                    </a>
+                    <p class="footer-description">Transploymer is revolutionizing polymer engineering with transformer AI, enabling faster, smarter, and more sustainable material innovation.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">How it Works</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">API Reference</a></li>
+                        <li><a href="#">Community</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Transploymer. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Loader
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.querySelector('.loader').classList.add('hidden');
+            }, 1000);
+        });
+
+        // Mobile Menu
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const mobileMenuClose = document.querySelector('.mobile-menu-close');
+        const overlay = document.querySelector('.overlay');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('open');
+            overlay.classList.add('active');
+        });
+
+        mobileMenuClose.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+            overlay.classList.remove('active');
+        });
+
+        overlay.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+            overlay.classList.remove('active');
+        });
+
+        // Cursor Follower
+        const cursorFollower = document.querySelector('.cursor-follower');
+        document.addEventListener('mousemove', (e) => {
+            cursorFollower.style.left = `${e.clientX - 20}px`;
+            cursorFollower.style.top = `${e.clientY - 20}px`;
+            cursorFollower.style.opacity = '1';
+        });
+
+        // Scroll Animations
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.feature-card, .process-step, .case-container, .testimonial-card, .cta-title, .cta-subtitle, .cta-btn');
+            elements.forEach((el) => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top <= window.innerHeight * 0.8) {
+                    el.classList.add('animated');
+                }
+            });
+
+            const processLine = document.querySelector('.process-line');
+            if (processLine) {
+                const rect = processLine.getBoundingClientRect();
+                if (rect.top <= window.innerHeight * 0.8) {
+                    processLine.classList.add('animated');
+                }
+            }
+        };
+
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+
+        // Falling Elements
+        const fallingContainers = document.querySelectorAll('.falling-elements');
+        fallingContainers.forEach((container) => {
+            for (let i = 0; i < 10; i++) {
+                const element = document.createElement('div');
+                const type = ['hexagon', 'circle', 'square'][Math.floor(Math.random() * 3)];
+                element.classList.add('falling-element', type);
+                if (type === 'hexagon') {
+                    element.innerHTML = `<svg viewBox="0 0 40 35"><polygon points="20,5 35,15 35,30 20,35 5,30 5,15" stroke="#1a5f7a" fill="none" stroke-width="2" /></svg>`;
+                }
+                element.style.left = `${Math.random() * 100}%`;
+                element.style.animationDelay = `${Math.random() * 10}s`;
+                container.appendChild(element);
+            }
+        });
+
+        // Particles
+        const particleContainers = document.querySelectorAll('.particles-container');
+        particleContainers.forEach((container) => {
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.width = `${Math.random() * 5 + 5}px`;
+                particle.style.height = particle.style.width;
+                particle.style.backgroundColor = `rgba(87, 196, 229, ${Math.random() * 0.3 + 0.1})`;
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.animation = `float ${Math.random() * 10 + 5}s ease-in-out infinite alternate`;
+                container.appendChild(particle);
+            }
+        });
+    </script>
+</body>
+</html>

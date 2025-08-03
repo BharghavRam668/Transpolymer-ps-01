@@ -1,0 +1,169 @@
+/* Login Page Styles */
+.login-container {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f9fc;
+  padding-top: 30px;
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 450px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 40px;
+}
+
+.login-brand {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #ee6c4d;
+  font-size: 27px;
+}
+
+.login-brand h2 {
+  color:#7b7b7b;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.login-title {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.login-title h3 {
+  color: #ee6c4d;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.input-group {
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+}
+
+/* remove the old left-indenting padding */
+.form-input {
+  width: 100%;
+  padding: 14px 16px;    /* was 14px 16px 14px 46px */
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.2s ease;
+}
+
+/* because we no longer need .input-icon, you can delete that rule entirely */
+
+.form-input:focus {
+  outline: none;
+  border-color: #000000;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+}
+
+.forgot-password {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -12px;
+  margin-bottom: 8px;
+}
+
+.forgot-password a {
+  color: #000000;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+}
+
+.login-button {
+  background-color: #ee6c4d;
+  color: rgb(255, 255, 255);
+  border: 0.5px solid #ee6c4d;
+  border-radius: 8px;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.login-button:hover {
+  background-color:#df4721;
+}
+
+.signup-prompt {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.signup-prompt a {
+  color: #ee6c4d;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.signup-prompt a:hover {
+  text-decoration: underline;
+}
+
+/* Email and Password Icons */
+.email-icon, .password-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.email-icon svg, .password-icon svg {
+  fill: currentColor;
+}
+.toggle-tabs {
+  display: flex;
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.toggle-tab {
+  flex: 1;
+  padding: 14px 0;
+  font-size: 16px;
+  font-weight: 600;
+  border: 1px solid #ccc;
+  background-color: #f8f8f8;
+  color: #000;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  border-right: none;
+}
+
+.toggle-tab:last-child {
+  border-right: 1px solid #ccc;
+}
+
+.toggle-tab.active {
+  background-color: #ee6c4d;
+  color: #fff;
+  border-color: #ee6c4d;
+}

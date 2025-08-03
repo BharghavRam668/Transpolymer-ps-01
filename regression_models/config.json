@@ -1,0 +1,56 @@
+{
+    "EPS": {
+        "model_type": "ChemBERTaRegressor",
+        "hidden_size": 384,
+        "output_features": 1,
+        "epochs": 20,
+        "learning_rate": 1e-05,
+        "target_mean": 4.586439790575916,
+        "target_std": 1.1193318663711718
+    },
+    "Eea": {
+        "model_type": "ChemBERTaRegressor",
+        "hidden_size": 384,
+        "output_features": 1,
+        "epochs": 20,
+        "learning_rate": 1e-05,
+        "target_mean": 2.3071345108695653,
+        "target_std": 1.0891033688010612
+    },
+    "Egb": {
+        "model_type": "ChemBERTaRegressor",
+        "hidden_size": 384,
+        "output_features": 1,
+        "epochs": 20,
+        "learning_rate": 1e-05,
+        "target_mean": 4.241514081996435,
+        "target_std": 1.9538881095499367
+    },
+    "Ei": {
+        "model_type": "ChemBERTaRegressor",
+        "hidden_size": 384,
+        "output_features": 1,
+        "epochs": 20,
+        "learning_rate": 1e-05,
+        "target_mean": 6.268143783783784,
+        "target_std": 0.9914143546350486
+    },
+    "Nc": {
+        "model_type": "ChemBERTaRegressor",
+        "hidden_size": 384,
+        "output_features": 1,
+        "epochs": 20,
+        "learning_rate": 1e-05,
+        "target_mean": 1.9472968586387434,
+        "target_std": 0.24037365169887243
+    },
+    "Xc": {
+        "model_type": "ChemBERTaRegressor",
+        "hidden_size": 384,
+        "output_features": 1,
+        "epochs": 20,
+        "learning_rate": 1e-05,
+        "target_mean": 36.63102784791667,
+        "target_std": 23.73338329145353
+    }
+}

@@ -1,0 +1,252 @@
+/* Signup Page Styles */
+.auth-container {
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f9fc;
+    padding-top: 30px;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+  
+.auth-form {
+    width: 100%;
+    max-width: 450px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 40px;
+}
+  
+/* Match the label style to login form style */
+.section-label {
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    display: block;
+    color: #6b3a10; /* Added warmer color that matches the Username title in image 2 */
+}
+  
+.input-field-container {
+    margin-bottom: 24px;
+}
+  
+/* Match the exact input styles from login.css */
+.text-input {
+    width: 100%;
+    padding: 16px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.2s ease;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #000;
+    letter-spacing: normal;
+    font-weight: normal;
+    line-height: 1.5;
+}
+
+/* Style placeholder same as login.css */
+.text-input::placeholder {
+    color: #9ca3af;
+    padding-left: 5px;
+    font-weight: 400;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+  
+.text-input:focus {
+    outline: none;
+    border-color: #ee6c4d;
+    box-shadow: 0 0 0 3px rgba(238, 108, 77, 0.1);
+}
+  
+.submit-button {
+    width: 100%;
+    background-color: #ee6c4d;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 24px;
+}
+  
+.submit-button:hover {
+    background-color: #e84a25;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(238, 108, 77, 0.2);
+}
+  
+.auth-links {
+    text-align: center;
+    font-size: 14px;
+    color: #6b7280;
+}
+  
+.login-link {
+    color: #ee6c4d;
+    font-weight: 500;
+    text-decoration: none;
+}
+  
+.login-link:hover {
+    text-decoration: underline;
+}
+  
+.error-message {
+    background-color: #fee2e2;
+    color: #ef4444;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    text-align: center;
+}
+  
+/* Brand/Title section */
+.auth-brand {
+    text-align: center;
+    margin-bottom: 10px;
+}
+  
+.auth-brand h2 {
+    color: #293241;
+    font-size: 32px;
+    font-weight: 700;
+}
+  
+.auth-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+  
+.auth-title h3 {
+    color: #ee6c4d;
+    font-size: 24px;
+    font-weight: 600;
+}
+/* Signup Page Styles */
+.auth-container {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f9fc;
+  padding-top: 30px;
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.auth-form {
+  width: 100%;
+  max-width: 450px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 40px;
+}
+
+.section-label {
+  color: #6b3a10;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.input-field-container {
+  margin-bottom: 24px;
+}
+
+/* padding stays uniform—no left icon gap :contentReference[oaicite:2]{index=2} */
+.text-input {
+  width: 100%;
+  padding: 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #000;
+}
+
+.text-input::placeholder {
+  color: #9ca3af;
+}
+
+.text-input:focus {
+  outline: none;
+  border-color: #ee6c4d;
+  box-shadow: 0 0 0 3px rgba(238, 108, 77, 0.1);
+}
+
+.submit-button {
+  width: 100%;
+  background-color: #ee6c4d;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 24px;
+}
+
+.submit-button:hover {
+  background-color: #e84a25;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(238, 108, 77, 0.2);
+}
+
+.auth-links {
+  text-align: center;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.login-link {
+  color: #ee6c4d;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}
+
+.error-message {
+  background-color: #fee2e2;
+  color: #ef4444;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.auth-brand {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.auth-brand h2 {
+  color: #293241;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.auth-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.auth-title h3 {
+  color: #ee6c4d;
+  font-size: 24px;
+  font-weight: 600;
+}

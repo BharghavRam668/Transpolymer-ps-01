@@ -1,0 +1,331 @@
+/* colors */
+:root {
+  --bg-light: #f5f7fa;
+  --card-bg: #fff;
+  --border: #e0e0e0;
+  --accent: #ee6c4d;
+  --text-dark: #333;
+  --text-secondary: #666;
+  --danger: #d32f2f;
+  --shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* reset and body */
+body { 
+  margin: 0; 
+  padding: 0; 
+  background: var(--bg-light); 
+  color: var(--text-dark);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* ADMIN NAVBAR */
+.admin-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 90px;
+  background: rgb(51, 49, 49);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar-title {
+  color: #fff;
+  font-size: 2rem;
+  font-weight:1000;
+  margin: 0;
+  letter-spacing: 0.7px;
+}
+
+.navbar-separator {
+  width: 2px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 1px;
+}
+
+.navbar-subtitle {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.45rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 0.6px;
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+}
+
+.logout-btn {
+  background: var(--accent);
+  border: none;
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 1000;
+  font-size: 1.2rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(238, 108, 77, 0.3);
+  min-width: 120px;
+  min-height: 40px;
+}
+
+
+.logout-btn:hover {
+  background: #d45a3a;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(238, 108, 77, 0.4);
+}
+
+/* push content below navbar */
+.admin-dashboard {
+  padding-top: 90px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 40px;
+}
+
+/* error */
+.error-message {
+  color: var(--danger);
+  margin: 15px 0;
+  background: #ffebee;
+  padding: 12px 16px;
+  border-radius: 6px;
+  border-left: 4px solid var(--danger);
+}
+
+/* TABS */
+.dashboard-tabs {
+  display: flex;
+  background: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  margin: 20px 0;
+  overflow: hidden;
+}
+
+.dashboard-tabs button {
+  flex: 1;
+  padding: 15px 20px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.dashboard-tabs .tab-active {
+  background: var(--accent);
+  color: #fff;
+}
+
+.dashboard-tabs button:hover:not(.tab-active) {
+  background: rgba(238, 108, 77, 0.08);
+  color: var(--accent);
+}
+
+.dashboard-tabs button:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 25%;
+  height: 50%;
+  width: 1px;
+  background: var(--border);
+}
+
+/* CONTENT CARD */
+.dashboard-content {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  margin-bottom: 40px;
+}
+
+/* section headings */
+.dashboard-content h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 12px;
+  color: var(--text-dark);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* table */
+.data-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.data-table th, .data-table td {
+  padding: 16px 20px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.data-table th {
+  background: rgb(58, 79, 99);
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+.data-table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.data-table tbody tr:nth-child(even) {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.data-table tbody tr:hover {
+  background: rgba(238, 108, 77, 0.05);
+}
+
+.data-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* badges & buttons */
+.badge {
+  background: var(--danger);
+  color: #fff;
+  border-radius: 12px;
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-left: 8px;
+  display: inline-block;
+}
+
+.action-buttons { 
+  display: flex; 
+  gap: 10px; 
+}
+
+.approve-btn, .deny-btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.approve-btn {
+  background: #2e7d32;
+  color: #fff;
+}
+
+.approve-btn:hover {
+  background: #1b5e20;
+  transform: translateY(-1px);
+}
+
+.deny-btn {
+  background: var(--danger);
+  color: #fff;
+}
+
+.deny-btn:hover {
+  background: #b71c1c;
+  transform: translateY(-1px);
+}
+
+/* empty state */
+.dashboard-content p {
+  text-align: center;
+  color: var(--text-secondary);
+  padding: 40px 20px;
+  font-size: 1.1rem;
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .admin-navbar {
+    padding: 0 20px;
+    height: 60px;
+  }
+  
+  .navbar-brand {
+    gap: 15px;
+  }
+  
+  .navbar-title {
+    font-size: 1.2rem;
+  }
+  
+  .navbar-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .navbar-separator {
+    height: 30px;
+  }
+  
+  .logout-btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+  
+  .admin-dashboard {
+    padding-top: 80px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  .dashboard-tabs { 
+    flex-direction: column; 
+  }
+  
+  .dashboard-tabs button:not(:last-child)::after {
+    display: none;
+  }
+  
+  .dashboard-content {
+    padding: 20px;
+  }
+  
+  .data-table th, .data-table td {
+    padding: 12px 15px;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+    gap: 6px;
+  }
+}
